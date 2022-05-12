@@ -25,6 +25,7 @@ export default function App() {
     <View style={styles.container}>
       <ImageBackground source={image} resizeMode="cover" style={styles.image}>
         <StatusBar style="auto" />
+        <Text style={styles.header}>Currency Exchange</Text>
         <FromCountry
           FromCountry={fromCountry}
           onChangeFromCountry={onChangefromCountry}
@@ -52,6 +53,15 @@ const styles = StyleSheet.create({
   },
   image: {
     flex: 1,
+    justifyContent: "center",
+  },
+  header: {
+    fontSize: "3rem",
+    color: "#fff",
+    fontFamily: "Raleway_900Black",
+    marginLeft: "2rem",
+    marginRight: "2rem",
+    alignItems: "center",
     justifyContent: "center",
   },
   greeting: {
