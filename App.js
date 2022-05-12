@@ -1,16 +1,21 @@
+import React from 'react';
 import { StatusBar } from "expo-status-bar";
 import { StyleSheet, Text, View } from "react-native";
-import { TailwindProvider } from 'tailwind-rn';
-import utilities from './tailwind.json';
+import FlatButton from "./Button";
+// import { TailwindProvider } from 'tailwind-rn';
+// import utilities from './tailwind.json';
 
 export default function App() {
+
+  const pressHandler = ()=> console.log('i am a button and i just got clicked!')
+
   return (
-    <TailwindProvider utilities={utilities}>
+    // <TailwindProvider utilities={utilities}>
       <View style={styles.container}>
-        <Text style={styles.greeting}>it is working</Text>
         <StatusBar style="auto" />
+        <FlatButton text='Exchange Currency!' onPress={pressHandler} />
       </View>
-    </TailwindProvider>
+    // </TailwindProvider>
   );
 }
 
