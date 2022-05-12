@@ -1,12 +1,16 @@
 import { StatusBar } from "expo-status-bar";
 import { StyleSheet, Text, View } from "react-native";
+import { TailwindProvider } from 'tailwind-rn';
+import utilities from './tailwind.json';
 
 export default function App() {
   return (
-    <View style={styles.container}>
-      <Text>hi</Text>
-      <StatusBar style="auto" />
-    </View>
+    <TailwindProvider utilities={utilities}>
+      <View style={styles.container}>
+        <Text style={styles.greeting}>it is working</Text>
+        <StatusBar style="auto" />
+      </View>
+    </TailwindProvider>
   );
 }
 
@@ -17,4 +21,10 @@ const styles = StyleSheet.create({
     alignItems: "center",
     justifyContent: "center",
   },
+
+  greeting: {
+    backgroundColor: "#141",
+    color: "#E898",
+    fontSize: "8rem"
+  }
 });
