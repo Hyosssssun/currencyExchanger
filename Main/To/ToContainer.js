@@ -2,22 +2,16 @@ import CountryInputField from "../../Global/CountryInputField";
 import CurrencyInputField from "../../Global/CurrencyInputField";
 import { SafeAreaView, StyleSheet } from "react-native";
 
-const FromCountry = ({
-  FromCountry,
-  onChangeFromCountry,
-  FromCurrency,
-  onChangeFromCurrency,
+const ToContainer = ({
+  toCountry,
+  onChangetoCountry,
+  toCurrency,
+  onChangetoCurrency,
 }) => {
   return (
     <SafeAreaView style={styles.container}>
-      <CountryInputField
-        text={FromCountry}
-        onChangeText={onChangeFromCountry}
-      />
-      <CurrencyInputField
-        text={FromCurrency}
-        onChangeText={onChangeFromCurrency}
-      />
+      <CountryInputField text={toCountry} onChangeText={onChangetoCountry} />
+      <CurrencyInputField text={toCurrency} onChangeText={onChangetoCurrency} />
     </SafeAreaView>
   );
 };
@@ -29,4 +23,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default FromCountry;
+export default ToContainer;

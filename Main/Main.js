@@ -1,6 +1,6 @@
 import { View, StyleSheet } from "react-native";
-import FromCountry from "./From/FromCountry.js";
-import ToCountry from "./To/ToCountry.js";
+import FromContainer from "./From/FromContainer.js";
+import ToContainer from "./To/ToContainer.js";
 
 const Main = ({
   fromCountry,
@@ -14,17 +14,17 @@ const Main = ({
 }) => {
   return (
     <View style={styles.container}>
-      <FromCountry
-        FromCountry={fromCountry}
-        onChangeFromCountry={onChangefromCountry}
-        FromCurrency={fromCurrency}
-        onChangeFromCurrency={onChangefromCurrency}
+      <FromContainer
+        fromCountry={fromCountry}
+        onChangefromCountry={onChangefromCountry}
+        fromCurrency={fromCurrency}
+        onChangefromCurrency={onChangefromCurrency}
       />
-      <ToCountry
-        ToCountry={toCountry}
-        onChangeToCountry={onChangetoCountry}
-        ToCurrency={toCurrency}
-        onChangeToCurrency={onChangetoCurrency}
+      <ToContainer
+        toCountry={toCountry}
+        onChangetoCountry={onChangetoCountry}
+        toCurrency={toCurrency}
+        onChangetoCurrency={onChangetoCurrency}
       />
     </View>
   );

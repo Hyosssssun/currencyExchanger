@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { StatusBar } from "expo-status-bar";
 import { StyleSheet, Text, View, ImageBackground } from "react-native";
 import FlatButton from "./Global/Button";
@@ -11,10 +11,10 @@ const image = {
 };
 
 export default function App() {
-  const [fromCountry, onChangefromCountry] = React.useState("");
-  const [fromCurrency, onChangefromCurrency] = React.useState("");
-  const [toCountry, onChangetoCountry] = React.useState("");
-  const [toCurrency, onChangetoCurrency] = React.useState("");
+  const [fromCountry, onChangefromCountry] = useState("");
+  const [fromCurrency, onChangefromCurrency] = useState("");
+  const [toCountry, onChangetoCountry] = useState("");
+  const [toCurrency, onChangetoCurrency] = useState("");
 
   const pressHandler = () =>
     console.log("i am a button and i just got clicked!");
