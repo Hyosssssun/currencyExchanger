@@ -16,12 +16,13 @@ const Flag = ({ text, onChangeText }) => {
 const styles = StyleSheet.create({
   input: {
     height: 50,
-    width: 100,
+    width: 50,
     margin: 12,
     borderWidth: 1,
     padding: 10,
     borderRadius: 8,
     fontFamily: "Raleway_800ExtraBold",
+    textAlign: "center",
     backgroundColor: "rgba(255, 255, 255, .7)",
   },
 });

@@ -5,12 +5,16 @@ import ToContainer from "./To/ToContainer.js";
 const Main = ({
   fromCountry,
   onChangefromCountry,
+  fromCountryFlag,
+  onChangefromCountryFlag,
   fromAmount,
   onChangefromAmount,
   fromCurrency,
   onChangefromCurrency,
   toCountry,
   onChangetoCountry,
+  toCountryFlag,
+  onChangetoCountryFlag,
   toAmount,
   onChangetoAmount,
   toCurrency,
@@ -21,6 +25,8 @@ const Main = ({
       <FromContainer
         fromCountry={fromCountry}
         onChangefromCountry={onChangefromCountry}
+        fromCountryFlag={fromCountryFlag}
+        onChangefromCountryFlag={onChangefromCountryFlag}
         fromAmount={fromAmount}
         onChangefromAmount={onChangefromAmount}
         fromCurrency={fromCurrency}
@@ -29,6 +35,8 @@ const Main = ({
       <ToContainer
         toCountry={toCountry}
         onChangetoCountry={onChangetoCountry}
+        toCountryFlag={toCountryFlag}
+        onChangetoCountryFlag={onChangetoCountryFlag}
         toAmount={toAmount}
         onChangetoAmount={onChangetoAmount}
         toCurrency={toCurrency}

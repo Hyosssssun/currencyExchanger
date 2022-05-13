@@ -16,7 +16,7 @@ const AmountInputField = ({ text, onChangeText }) => {
 const styles = StyleSheet.create({
   input: {
     height: 50,
-    width: 100,
+    width: 80,
     margin: 12,
     borderWidth: 1,
     padding: 10,

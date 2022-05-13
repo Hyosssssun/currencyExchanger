@@ -14,9 +14,11 @@ const image = {
 
 export default function App() {
   const [fromCountry, onChangefromCountry] = useState("Japan");
+  const [fromCountryFlag, onChangefromCountryFlag] = useState("");
   const [fromAmount, onChangefromAmount] = useState("1.00");
   const [fromCurrency, onChangefromCurrency] = useState("");
   const [toCountry, onChangetoCountry] = useState("");
+  const [toCountryFlag, onChangetoCountryFlag] = useState("");
   const [toAmount, onChangetoAmount] = useState("");
   const [toCurrency, onChangetoCurrency] = useState("USD");
   const [amount, setAmount] = useState("1000");
@@ -24,10 +26,14 @@ export default function App() {
   let inputFromCountry = CountryAndCurrency.getCountriesBy("name", fromCountry);
   console.log(inputFromCountry);
 
+  let fromCountryFlagEmoji = inputFromCountry[0].currency.unicode;
+  console.log(fromCountryFlagEmoji);
+
   let inputFromCurrency = inputFromCountry[0].currency.code;
   console.log(inputFromCurrency);
 
   function setFromCurrency() {
+    onChangefromCountryFlag(fromCountryFlagEmoji);
     onChangefromCurrency(inputFromCurrency);
   }
   useEffect(() => {
@@ -61,12 +67,16 @@ export default function App() {
         <Main
           fromCountry={fromCountry}
           onChangefromCountry={onChangefromCountry}
+          fromCountryFlag={fromCountryFlag}
+          onChangefromCountryFlag={onChangefromCountryFlag}
           fromAmount={fromAmount}
           onChangefromAmount={onChangefromAmount}
           fromCurrency={fromCurrency}
           onChangefromCurrency={onChangefromCurrency}
           toCountry={toCountry}
           onChangetoCountry={onChangetoCountry}
+          toCountryFlag={toCountryFlag}
+          onChangetoCountryFlag={onChangetoCountryFlag}
           toAmount={toAmount}
           onChangetoAmount={onChangetoAmount}
           toCurrency={toCurrency}
