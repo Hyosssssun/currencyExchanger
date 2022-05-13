@@ -1,9 +1,8 @@
 import React from "react";
 import { StatusBar } from "expo-status-bar";
 import { StyleSheet, Text, View, ImageBackground } from "react-native";
-import FlatButton from "./Button";
-import FromCountry from "./From/FromCountry";
-import ToCountry from "./To/ToCountry";
+import FlatButton from "./Global/Button";
+import Main from "./Main/Main";
 // import { TailwindProvider } from 'tailwind-rn';
 // import utilities from './tailwind.json';
 
@@ -26,17 +25,15 @@ export default function App() {
       <ImageBackground source={image} resizeMode="cover" style={styles.image}>
         <StatusBar style="auto" />
         <Text style={styles.header}>Currency Exchange</Text>
-        <FromCountry
-          FromCountry={fromCountry}
-          onChangeFromCountry={onChangefromCountry}
-          FromCurrency={fromCurrency}
-          onChangeFromCurrency={onChangefromCurrency}
-        />
-        <ToCountry
-          ToCountry={toCountry}
-          onChangeToCountry={onChangetoCountry}
-          ToCurrency={toCurrency}
-          onChangeToCurrency={onChangetoCurrency}
+        <Main
+          fromCountry={fromCountry}
+          onChangefromCountry={onChangefromCountry}
+          fromCurrency={fromCurrency}
+          onChangefromCurrency={onChangefromCurrency}
+          toCountry={toCountry}
+          onChangetoCountry={onChangetoCountry}
+          toCurrency={toCurrency}
+          onChangetoCurrency={onChangetoCurrency}
         />
         <FlatButton text="Exchange Currency!" onPress={pressHandler} />
       </ImageBackground>

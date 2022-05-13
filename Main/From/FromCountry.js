@@ -1,5 +1,5 @@
-import CountryInputField from "../CountryInputField";
-import CurrencyInputField from "../CurrencyInputField";
+import CountryInputField from "../../Global/CountryInputField";
+import CurrencyInputField from "../../Global/CurrencyInputField";
 import { SafeAreaView, StyleSheet } from "react-native";
 
 const FromCountry = ({
