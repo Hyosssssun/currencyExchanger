@@ -1,9 +1,10 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { StatusBar } from "expo-status-bar";
 import { StyleSheet, Text, View, ImageBackground } from "react-native";
 import FlatButton from "./Global/Button";
 import Main from "./Main/Main";
-import { API_URL, API_KEY } from "@env"
+import { API_URL, API_KEY } from "@env";
+import CountryAndCurrency from "@workmate/country-and-currency";
 // import { TailwindProvider } from 'tailwind-rn';
 // import utilities from './tailwind.json';
 
@@ -12,29 +13,44 @@ const image = {
 };
 
 export default function App() {
-  const [fromCountry, onChangefromCountry] = useState("");
-  const [fromCurrency, onChangefromCurrency] = useState("GBP");
+  const [fromCountry, onChangefromCountry] = useState("Japan");
+  const [fromAmount, onChangefromAmount] = useState("1.00");
+  const [fromCurrency, onChangefromCurrency] = useState("");
   const [toCountry, onChangetoCountry] = useState("");
+  const [toAmount, onChangetoAmount] = useState("");
   const [toCurrency, onChangetoCurrency] = useState("USD");
-  const [amount, setAmount] = useState("1000")
+  const [amount, setAmount] = useState("1000");
+
+  let inputFromCountry = CountryAndCurrency.getCountriesBy("name", fromCountry);
+  console.log(inputFromCountry);
+
+  let inputFromCurrency = inputFromCountry[0].currency.code;
+  console.log(inputFromCurrency);
+
+  function setFromCurrency() {
+    onChangefromCurrency(inputFromCurrency);
+  }
+  useEffect(() => {
+    setFromCurrency();
+  }, []);
 
   // if you want just rates, use this URL:
   // `https://v6.exchangerate-api.com/v6/${API_KEY}/latest/${fromCurrency}`;
 
   // can be separated to 'helper.js' file later.
-  const fetchData = () => (
+  const fetchData = () =>
     fetch(`${API_URL}/${API_KEY}/pair/${fromCurrency}/${toCurrency}/${amount}`)
-      .then(res => res.json())
-      .then(data => console.log(data))
+      .then((res) => res.json())
+      .then((data) => console.log(data))
       // .then(data => {setState(data)})
-      .catch(error => console.error(error))
-  )
+      .catch((error) => console.error(error));
 
   const pressHandler = () => {
-    console.log('i am a button and i just got clicked! and now I will fetch data')
-    return fetchData()
-  }
-
+    console.log(
+      "i am a button and i just got clicked! and now I will fetch data"
+    );
+    return fetchData();
+  };
 
   return (
     // <TailwindProvider utilities={utilities}>
@@ -45,10 +61,14 @@ export default function App() {
         <Main
           fromCountry={fromCountry}
           onChangefromCountry={onChangefromCountry}
+          fromAmount={fromAmount}
+          onChangefromAmount={onChangefromAmount}
           fromCurrency={fromCurrency}
           onChangefromCurrency={onChangefromCurrency}
           toCountry={toCountry}
           onChangetoCountry={onChangetoCountry}
+          toAmount={toAmount}
+          onChangetoAmount={onChangetoAmount}
           toCurrency={toCurrency}
           onChangetoCurrency={onChangetoCurrency}
         />

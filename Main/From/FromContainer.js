@@ -1,10 +1,13 @@
 import CountryInputField from "../../Global/CountryInputField";
+import AmountInputField from "../../Global/AmountInputField";
 import CurrencyInputField from "../../Global/CurrencyInputField";
 import { SafeAreaView, StyleSheet } from "react-native";
 
 const FromContainer = ({
   fromCountry,
   onChangefromCountry,
+  fromAmount,
+  onChangefromAmount,
   fromCurrency,
   onChangefromCurrency,
 }) => {
@@ -14,6 +17,7 @@ const FromContainer = ({
         text={fromCountry}
         onChangeText={onChangefromCountry}
       />
+      <AmountInputField text={fromAmount} onChangeText={onChangefromAmount} />
       <CurrencyInputField
         text={fromCurrency}
         onChangeText={onChangefromCurrency}
