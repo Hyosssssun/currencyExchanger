@@ -3,6 +3,7 @@ import { StatusBar } from "expo-status-bar";
 import { StyleSheet, Text, View, ImageBackground } from "react-native";
 import FlatButton from "./Global/Button";
 import Main from "./Main/Main";
+import { API_URL, API_KEY } from "@env"
 // import { TailwindProvider } from 'tailwind-rn';
 // import utilities from './tailwind.json';
 
@@ -12,12 +13,28 @@ const image = {
 
 export default function App() {
   const [fromCountry, onChangefromCountry] = useState("");
-  const [fromCurrency, onChangefromCurrency] = useState("");
+  const [fromCurrency, onChangefromCurrency] = useState("GBP");
   const [toCountry, onChangetoCountry] = useState("");
-  const [toCurrency, onChangetoCurrency] = useState("");
+  const [toCurrency, onChangetoCurrency] = useState("USD");
+  const [amount, setAmount] = useState("1000")
 
-  const pressHandler = () =>
-    console.log("i am a button and i just got clicked!");
+  // if you want just rates, use this URL:
+  // `https://v6.exchangerate-api.com/v6/${API_KEY}/latest/${fromCurrency}`;
+
+  // can be separated to 'helper.js' file later.
+  const fetchData = () => (
+    fetch(`${API_URL}/${API_KEY}/pair/${fromCurrency}/${toCurrency}/${amount}`)
+      .then(res => res.json())
+      .then(data => console.log(data))
+      // .then(data => {setState(data)})
+      .catch(error => console.error(error))
+  )
+
+  const pressHandler = () => {
+    console.log('i am a button and i just got clicked! and now I will fetch data')
+    return fetchData()
+  }
+
 
   return (
     // <TailwindProvider utilities={utilities}>
@@ -60,10 +77,5 @@ const styles = StyleSheet.create({
     marginRight: "2rem",
     alignItems: "center",
     justifyContent: "center",
-  },
-  greeting: {
-    backgroundColor: "#141",
-    color: "#E898",
-    fontSize: "8rem",
   },
 });
