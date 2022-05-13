@@ -13,56 +13,50 @@ const image = {
 };
 
 export default function App() {
-  const [fromCountry, onChangefromCountry] = useState("Japan");
+  const [fromCountry, setFromCountry] = useState("");
   const [fromCountryFlag, onChangefromCountryFlag] = useState("");
   const [fromAmount, onChangefromAmount] = useState("1.00");
   const [fromCurrency, onChangefromCurrency] = useState("");
-  const [toCountry, onChangetoCountry] = useState("Taiwan");
+
+  const [toCountry, setToCountry] = useState("");
   const [toCountryFlag, onChangetoCountryFlag] = useState("");
   const [toAmount, onChangetoAmount] = useState("");
   const [toCurrency, onChangetoCurrency] = useState("");
-  const [amount, setAmount] = useState("1000");
-
-  let inputFromCountry = CountryAndCurrency.getCountriesBy("name", fromCountry);
-  console.log(inputFromCountry);
-
-  let fromCountryFlagEmoji = inputFromCountry[0].currency.unicode;
-  console.log(fromCountryFlagEmoji);
-
-  let inputFromCurrency = inputFromCountry[0].currency.code;
-  console.log(inputFromCurrency);
 
   function setFromCurrency() {
-    onChangefromCountryFlag(fromCountryFlagEmoji);
-    onChangefromCurrency(inputFromCurrency);
+    let inputFromCountry = CountryAndCurrency.getCountriesBy(
+      "name",
+      fromCountry
+    );
+
+    if (inputFromCountry.length === 1) {
+      onChangefromCountryFlag(inputFromCountry[0].currency.unicode);
+      onChangefromCurrency(inputFromCountry[0].currency.code);
+    }
   }
   useEffect(() => {
     setFromCurrency();
-  }, []);
-
-  let inputToCountry = CountryAndCurrency.getCountriesBy("name", toCountry);
-  console.log(inputToCountry);
-
-  let toCountryFlagEmoji = inputToCountry[0].currency.unicode;
-  console.log(toCountryFlagEmoji);
-
-  let inputToCurrency = inputToCountry[0].currency.code;
-  console.log(inputToCurrency);
+  });
 
   function setToCurrency() {
-    onChangetoCountryFlag(toCountryFlagEmoji);
-    onChangetoCurrency(inputToCurrency);
+    let inputToCountry = CountryAndCurrency.getCountriesBy("name", toCountry);
+    if (inputToCountry.length === 1) {
+      onChangetoCountryFlag(inputToCountry[0].currency.unicode);
+      onChangetoCurrency(inputToCountry[0].currency.code);
+    }
   }
   useEffect(() => {
     setToCurrency();
-  }, []);
+  });
 
   // if you want just rates, use this URL:
   // `https://v6.exchangerate-api.com/v6/${API_KEY}/latest/${fromCurrency}`;
 
   // can be separated to 'helper.js' file later.
   const fetchData = () =>
-    fetch(`${API_URL}/${API_KEY}/pair/${fromCurrency}/${toCurrency}/${amount}`)
+    fetch(
+      `${API_URL}/${API_KEY}/pair/${fromCurrency}/${toCurrency}/${fromAmount}`
+    )
       .then((res) => res.json())
       .then((data) => console.log(data))
       // .then(data => {setState(data)})
@@ -83,7 +77,7 @@ export default function App() {
         <Text style={styles.header}>Currency Exchange</Text>
         <Main
           fromCountry={fromCountry}
-          onChangefromCountry={onChangefromCountry}
+          setFromCountry={setFromCountry}
           fromCountryFlag={fromCountryFlag}
           onChangefromCountryFlag={onChangefromCountryFlag}
           fromAmount={fromAmount}
@@ -91,7 +85,7 @@ export default function App() {
           fromCurrency={fromCurrency}
           onChangefromCurrency={onChangefromCurrency}
           toCountry={toCountry}
-          onChangetoCountry={onChangetoCountry}
+          setToCountry={setToCountry}
           toCountryFlag={toCountryFlag}
           onChangetoCountryFlag={onChangetoCountryFlag}
           toAmount={toAmount}

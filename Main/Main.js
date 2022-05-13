@@ -4,7 +4,7 @@ import ToContainer from "./To/ToContainer.js";
 
 const Main = ({
   fromCountry,
-  onChangefromCountry,
+  setFromCountry,
   fromCountryFlag,
   onChangefromCountryFlag,
   fromAmount,
@@ -12,7 +12,7 @@ const Main = ({
   fromCurrency,
   onChangefromCurrency,
   toCountry,
-  onChangetoCountry,
+  setToCountry,
   toCountryFlag,
   onChangetoCountryFlag,
   toAmount,
@@ -24,7 +24,7 @@ const Main = ({
     <View style={styles.container}>
       <FromContainer
         fromCountry={fromCountry}
-        onChangefromCountry={onChangefromCountry}
+        setFromCountry={setFromCountry}
         fromCountryFlag={fromCountryFlag}
         onChangefromCountryFlag={onChangefromCountryFlag}
         fromAmount={fromAmount}
@@ -34,7 +34,7 @@ const Main = ({
       />
       <ToContainer
         toCountry={toCountry}
-        onChangetoCountry={onChangetoCountry}
+        setToCountry={setToCountry}
         toCountryFlag={toCountryFlag}
         onChangetoCountryFlag={onChangetoCountryFlag}
         toAmount={toAmount}

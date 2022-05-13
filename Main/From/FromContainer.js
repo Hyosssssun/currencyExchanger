@@ -6,7 +6,7 @@ import { SafeAreaView, StyleSheet } from "react-native";
 
 const FromContainer = ({
   fromCountry,
-  onChangefromCountry,
+  setFromCountry,
   fromCountryFlag,
   onChangefromCountryFlag,
   fromAmount,
@@ -16,10 +16,7 @@ const FromContainer = ({
 }) => {
   return (
     <SafeAreaView style={styles.container}>
-      <CountryInputField
-        text={fromCountry}
-        onChangeText={onChangefromCountry}
-      />
+      <CountryInputField country={fromCountry} setCountry={setFromCountry} />
       <Flag text={fromCountryFlag} onChangeText={onChangefromCountryFlag} />
       <AmountInputField text={fromAmount} onChangeText={onChangefromAmount} />
       <CurrencyInputField

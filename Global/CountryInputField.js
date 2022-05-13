@@ -1,13 +1,13 @@
 import React from "react";
 import { SafeAreaView, StyleSheet, TextInput } from "react-native";
 
-const CountryInputField = ({ text, onChangeText }) => {
+const CountryInputField = ({ country, setCountry }) => {
   return (
     <SafeAreaView>
       <TextInput
         style={styles.input}
-        onChangeText={onChangeText}
-        value={text}
+        onChangeText={(newText) => setCountry(newText)}
+        defaultValue={country}
       />
     </SafeAreaView>
   );
