@@ -17,10 +17,10 @@ export default function App() {
   const [fromCountryFlag, onChangefromCountryFlag] = useState("");
   const [fromAmount, onChangefromAmount] = useState("1.00");
   const [fromCurrency, onChangefromCurrency] = useState("");
-  const [toCountry, onChangetoCountry] = useState("");
+  const [toCountry, onChangetoCountry] = useState("Taiwan");
   const [toCountryFlag, onChangetoCountryFlag] = useState("");
   const [toAmount, onChangetoAmount] = useState("");
-  const [toCurrency, onChangetoCurrency] = useState("USD");
+  const [toCurrency, onChangetoCurrency] = useState("");
   const [amount, setAmount] = useState("1000");
 
   let inputFromCountry = CountryAndCurrency.getCountriesBy("name", fromCountry);
@@ -38,6 +38,23 @@ export default function App() {
   }
   useEffect(() => {
     setFromCurrency();
+  }, []);
+
+  let inputToCountry = CountryAndCurrency.getCountriesBy("name", toCountry);
+  console.log(inputToCountry);
+
+  let toCountryFlagEmoji = inputToCountry[0].currency.unicode;
+  console.log(toCountryFlagEmoji);
+
+  let inputToCurrency = inputToCountry[0].currency.code;
+  console.log(inputToCurrency);
+
+  function setToCurrency() {
+    onChangetoCountryFlag(toCountryFlagEmoji);
+    onChangetoCurrency(inputToCurrency);
+  }
+  useEffect(() => {
+    setToCurrency();
   }, []);
 
   // if you want just rates, use this URL:

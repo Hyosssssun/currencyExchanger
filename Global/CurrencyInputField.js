@@ -16,7 +16,7 @@ const CurrencyInputField = ({ text, onChangeText }) => {
 const styles = StyleSheet.create({
   input: {
     height: 50,
-    width: 50,
+    width: 60,
     margin: 12,
     borderWidth: 1,
     padding: 10,
