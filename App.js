@@ -1,9 +1,10 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { StatusBar } from "expo-status-bar";
 import { StyleSheet, Text, View, ImageBackground } from "react-native";
 import FlatButton from "./Global/Button";
 import Main from "./Main/Main";
-import { API_URL, API_KEY } from "@env"
+import { API_URL, API_KEY } from "@env";
+import CountryAndCurrency from "@workmate/country-and-currency";
 // import { TailwindProvider } from 'tailwind-rn';
 // import utilities from './tailwind.json';
 
@@ -12,29 +13,96 @@ const image = {
 };
 
 export default function App() {
-  const [fromCountry, onChangefromCountry] = useState("");
-  const [fromCurrency, onChangefromCurrency] = useState("GBP");
-  const [toCountry, onChangetoCountry] = useState("");
-  const [toCurrency, onChangetoCurrency] = useState("USD");
-  const [amount, setAmount] = useState("1000")
+  const [fromCountry, setFromCountry] = useState("");
+  const [fromCountryFlag, onChangefromCountryFlag] = useState("");
+  const [fromAmount, onChangefromAmount] = useState("1.00");
+  const [fromCurrency, onChangefromCurrency] = useState("");
+
+  const [toCountry, setToCountry] = useState("");
+  const [toCountryFlag, onChangetoCountryFlag] = useState("");
+  const [toAmount, onChangetoAmount] = useState("");
+  const [toCurrency, onChangetoCurrency] = useState("");
+
+  function setFromCurrency() {
+    if (fromCountry.charAt(0) === fromCountry.charAt(0).toLowerCase()) {
+      const ending = fromCountry.slice(1);
+      const capitalisedFromCountry =
+        fromCountry.charAt(0).toUpperCase() + ending;
+      // console.log(capitalisedFromCountry);
+      const capitalisedInputFromCountry = CountryAndCurrency.getCountriesBy(
+        "name",
+        capitalisedFromCountry
+      );
+
+      if (capitalisedInputFromCountry.length === 1) {
+        onChangefromCountryFlag(
+          capitalisedInputFromCountry[0].currency.unicode
+        );
+        onChangefromCurrency(capitalisedInputFromCountry[0].currency.code);
+      }
+    } else {
+      const inputFromCountry = CountryAndCurrency.getCountriesBy(
+        "name",
+        fromCountry
+      );
+
+      if (inputFromCountry.length === 1) {
+        onChangefromCountryFlag(inputFromCountry[0].currency.unicode);
+        onChangefromCurrency(inputFromCountry[0].currency.code);
+      }
+    }
+  }
+  useEffect(() => {
+    setFromCurrency();
+  });
+
+  function setToCurrency() {
+    if (toCountry.charAt(0) === toCountry.charAt(0).toLowerCase()) {
+      const ending = toCountry.slice(1);
+      const capitalisedToCountry = toCountry.charAt(0).toUpperCase() + ending;
+      const capitalisedInputToCountry = CountryAndCurrency.getCountriesBy(
+        "name",
+        capitalisedToCountry
+      );
+
+      if (capitalisedInputToCountry.length === 1) {
+        onChangetoCountryFlag(capitalisedInputToCountry[0].currency.unicode);
+        onChangetoCurrency(capitalisedInputToCountry[0].currency.code);
+      }
+    } else {
+      const inputToCountry = CountryAndCurrency.getCountriesBy(
+        "name",
+        toCountry
+      );
+      if (inputToCountry.length === 1) {
+        onChangetoCountryFlag(inputToCountry[0].currency.unicode);
+        onChangetoCurrency(inputToCountry[0].currency.code);
+      }
+    }
+  }
+  useEffect(() => {
+    setToCurrency();
+  });
 
   // if you want just rates, use this URL:
   // `https://v6.exchangerate-api.com/v6/${API_KEY}/latest/${fromCurrency}`;
 
   // can be separated to 'helper.js' file later.
-  const fetchData = () => (
-    fetch(`${API_URL}/${API_KEY}/pair/${fromCurrency}/${toCurrency}/${amount}`)
-      .then(res => res.json())
-      .then(data => console.log(data))
+  const fetchData = () =>
+    fetch(
+      `${API_URL}/${API_KEY}/pair/${fromCurrency}/${toCurrency}/${fromAmount}`
+    )
+      .then((res) => res.json())
+      .then((data) => console.log(data))
       // .then(data => {setState(data)})
-      .catch(error => console.error(error))
-  )
+      .catch((error) => console.error(error));
 
   const pressHandler = () => {
-    console.log('i am a button and i just got clicked! and now I will fetch data')
-    return fetchData()
-  }
-
+    console.log(
+      "i am a button and i just got clicked! and now I will fetch data"
+    );
+    return fetchData();
+  };
 
   return (
     // <TailwindProvider utilities={utilities}>
@@ -44,11 +112,19 @@ export default function App() {
         <Text style={styles.header}>Currency Exchange</Text>
         <Main
           fromCountry={fromCountry}
-          onChangefromCountry={onChangefromCountry}
+          setFromCountry={setFromCountry}
+          fromCountryFlag={fromCountryFlag}
+          onChangefromCountryFlag={onChangefromCountryFlag}
+          fromAmount={fromAmount}
+          onChangefromAmount={onChangefromAmount}
           fromCurrency={fromCurrency}
           onChangefromCurrency={onChangefromCurrency}
           toCountry={toCountry}
-          onChangetoCountry={onChangetoCountry}
+          setToCountry={setToCountry}
+          toCountryFlag={toCountryFlag}
+          onChangetoCountryFlag={onChangetoCountryFlag}
+          toAmount={toAmount}
+          onChangetoAmount={onChangetoAmount}
           toCurrency={toCurrency}
           onChangetoCurrency={onChangetoCurrency}
         />

@@ -1,7 +1,7 @@
 import React from "react";
 import { SafeAreaView, StyleSheet, TextInput } from "react-native";
 
-const CurrencyInputField = ({ text, onChangeText }) => {
+const Flag = ({ text, onChangeText }) => {
   return (
     <SafeAreaView>
       <TextInput
@@ -16,7 +16,7 @@ const CurrencyInputField = ({ text, onChangeText }) => {
 const styles = StyleSheet.create({
   input: {
     height: 50,
-    width: 60,
+    width: 50,
     margin: 12,
     borderWidth: 1,
     padding: 10,
@@ -27,4 +27,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default CurrencyInputField;
+export default Flag;
