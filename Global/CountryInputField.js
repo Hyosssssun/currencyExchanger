@@ -8,6 +8,7 @@ const CountryInputField = ({ country, setCountry }) => {
         style={styles.input}
         onChangeText={(newText) => setCountry(newText)}
         defaultValue={country}
+        autoCapitalize="words"
       />
     </SafeAreaView>
   );

@@ -24,14 +24,32 @@ export default function App() {
   const [toCurrency, onChangetoCurrency] = useState("");
 
   function setFromCurrency() {
-    let inputFromCountry = CountryAndCurrency.getCountriesBy(
-      "name",
-      fromCountry
-    );
+    if (fromCountry.charAt(0) === fromCountry.charAt(0).toLowerCase()) {
+      const ending = fromCountry.slice(1);
+      const capitalisedFromCountry =
+        fromCountry.charAt(0).toUpperCase() + ending;
+      // console.log(capitalisedFromCountry);
+      const capitalisedInputFromCountry = CountryAndCurrency.getCountriesBy(
+        "name",
+        capitalisedFromCountry
+      );
 
-    if (inputFromCountry.length === 1) {
-      onChangefromCountryFlag(inputFromCountry[0].currency.unicode);
-      onChangefromCurrency(inputFromCountry[0].currency.code);
+      if (capitalisedInputFromCountry.length === 1) {
+        onChangefromCountryFlag(
+          capitalisedInputFromCountry[0].currency.unicode
+        );
+        onChangefromCurrency(capitalisedInputFromCountry[0].currency.code);
+      }
+    } else {
+      const inputFromCountry = CountryAndCurrency.getCountriesBy(
+        "name",
+        fromCountry
+      );
+
+      if (inputFromCountry.length === 1) {
+        onChangefromCountryFlag(inputFromCountry[0].currency.unicode);
+        onChangefromCurrency(inputFromCountry[0].currency.code);
+      }
     }
   }
   useEffect(() => {
@@ -39,10 +57,27 @@ export default function App() {
   });
 
   function setToCurrency() {
-    let inputToCountry = CountryAndCurrency.getCountriesBy("name", toCountry);
-    if (inputToCountry.length === 1) {
-      onChangetoCountryFlag(inputToCountry[0].currency.unicode);
-      onChangetoCurrency(inputToCountry[0].currency.code);
+    if (toCountry.charAt(0) === toCountry.charAt(0).toLowerCase()) {
+      const ending = toCountry.slice(1);
+      const capitalisedToCountry = toCountry.charAt(0).toUpperCase() + ending;
+      const capitalisedInputToCountry = CountryAndCurrency.getCountriesBy(
+        "name",
+        capitalisedToCountry
+      );
+
+      if (capitalisedInputToCountry.length === 1) {
+        onChangetoCountryFlag(capitalisedInputToCountry[0].currency.unicode);
+        onChangetoCurrency(capitalisedInputToCountry[0].currency.code);
+      }
+    } else {
+      const inputToCountry = CountryAndCurrency.getCountriesBy(
+        "name",
+        toCountry
+      );
+      if (inputToCountry.length === 1) {
+        onChangetoCountryFlag(inputToCountry[0].currency.unicode);
+        onChangetoCurrency(inputToCountry[0].currency.code);
+      }
     }
   }
   useEffect(() => {
