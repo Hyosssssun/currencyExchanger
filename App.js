@@ -15,7 +15,7 @@ const image = {
 export default function App() {
   const [fromCountry, setFromCountry] = useState("");
   const [fromCountryFlag, onChangefromCountryFlag] = useState("");
-  const [fromAmount, onChangefromAmount] = useState("");
+  const [fromAmount, onChangefromAmount] = useState("1.00");
   const [fromCurrency, onChangefromCurrency] = useState("");
 
   const [toCountry, setToCountry] = useState("");
@@ -54,6 +54,7 @@ export default function App() {
   }
   useEffect(() => {
     setFromCurrency();
+
   });
 
   function setToCurrency() {
