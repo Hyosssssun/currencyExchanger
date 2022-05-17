@@ -13,12 +13,12 @@ const image = {
 };
 
 export default function App() {
-  const [fromCountry, setFromCountry] = useState("Japan");
+  const [fromCountry, setFromCountry] = useState("");
   const [fromCountryFlag, onChangefromCountryFlag] = useState("");
-  const [fromAmount, onChangefromAmount] = useState("1.00");
+  const [fromAmount, onChangefromAmount] = useState("");
   const [fromCurrency, onChangefromCurrency] = useState("");
 
-  const [toCountry, setToCountry] = useState("China");
+  const [toCountry, setToCountry] = useState("");
   const [toCountryFlag, onChangetoCountryFlag] = useState("");
   const [toAmount, onChangetoAmount] = useState("");
   const [toCurrency, onChangetoCurrency] = useState("");
