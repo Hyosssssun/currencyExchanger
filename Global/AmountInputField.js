@@ -17,11 +17,12 @@ const styles = StyleSheet.create({
   input: {
     height: 50,
     width: 80,
-    margin: 12,
+    margin: 8,
     borderWidth: 1,
     padding: 10,
     borderRadius: 8,
     fontFamily: "Raleway_800ExtraBold",
+    textAlign: "center",
     backgroundColor: "rgba(255, 255, 255, .7)",
   },
 });
