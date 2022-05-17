@@ -1,29 +1,66 @@
+// React
 import React from "react";
 import { SafeAreaView, StyleSheet, TextInput } from "react-native";
 
-const AmountInputField = ({ text, onChangeText }) => {
+const AmountInputField = ({ onChangeCountryFlag, countryFlag, amount, onChangeAmount, ieAmount, currency, onChangeCurrency }) => {
   return (
-    <SafeAreaView>
+    <SafeAreaView style={styles.inputContainer}>
       <TextInput
-        style={styles.input}
-        onChangeText={onChangeText}
-        value={text}
+        style={styles.flag}
+        onChangeText={onChangeCountryFlag}
+        value={countryFlag}
+      />
+      <TextInput
+        style={styles.amount}
+        onChangeText={onChangeAmount}
+        value={amount}
+        placeholder={ieAmount}
+      />
+      <TextInput
+        style={styles.currency}
+        onChangeText={onChangeCurrency}
+        value={currency}
       />
     </SafeAreaView>
   );
 };
 
 const styles = StyleSheet.create({
-  input: {
-    height: 50,
-    width: 80,
-    margin: 8,
-    borderWidth: 1,
-    padding: 10,
+  inputContainer: {
+    width: "80%",
+    marginVertical: "0.3rem",
+    flex: 1,
+    flexDirection: "row",
+    alignSelf: "center",
     borderRadius: 8,
-    fontFamily: "Raleway_800ExtraBold",
+    backgroundColor: "rgba(255, 255, 255, .65)",
+    shadowColor: '#151515',
+    shadowOffset: {width: 4, height: 4},
+    shadowOpacity: 0.3,
+    shadowRadius: 8,
+  },
+  flag: {
+    width: "20%",
+    paddingVertical: "1rem",
     textAlign: "center",
-    backgroundColor: "rgba(255, 255, 255, .7)",
+  },
+  amount: {
+    width: "60%",
+    paddingVertical: "1rem",
+    textAlign: "center",
+    color: "#252525",
+    fontFamily: "Raleway_800ExtraBold",
+    fontSize: "1.3rem",
+    letterSpacing: 2,
+  },
+  currency: {
+    width: "20%",
+    paddingVertical: "1rem",
+    textAlign: "center",
+    color: "#252525",
+    fontFamily: "Raleway_800ExtraBold",
+    fontSize: "1rem",
+    letterSpacing: 2,
   },
 });
 

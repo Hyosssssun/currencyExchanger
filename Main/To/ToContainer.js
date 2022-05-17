@@ -1,9 +1,11 @@
-import CountryInputField from "../../Global/CountryInputField";
-import Flag from "../../Global/Flag";
-import AmountInputField from "../../Global/AmountInputField";
-import CurrencyInputField from "../../Global/CurrencyInputField";
+// React
 import { SafeAreaView, StyleSheet } from "react-native";
-import { View } from "react-native-web";
+// import { View } from "react-native-web";
+// Components
+import CountryInputField from "../../Global/CountryInputField";
+import AmountInputField from "../../Global/AmountInputField";
+// import Flag from "../../Global/Flag";
+// import CurrencyInputField from "../../Global/CurrencyInputField";
 
 const ToContainer = ({
   toCountry,
@@ -17,17 +19,15 @@ const ToContainer = ({
 }) => {
   return (
     <SafeAreaView style={styles.container}>
-      <View>
         <CountryInputField country={toCountry} setCountry={setToCountry} />
-      </View>
-      <View style={styles.view}>
-        <Flag text={toCountryFlag} onChangeText={onChangetoCountryFlag} />
-        <AmountInputField text={toAmount} onChangeText={onChangetoAmount} />
-        <CurrencyInputField
-          text={toCurrency}
-          onChangeText={onChangetoCurrency}
+        <AmountInputField 
+          countryFlag={toCountryFlag} 
+          onChangeCountryFlag={onChangetoCountryFlag} 
+          amount={toAmount} 
+          onChangeAmount={onChangetoAmount} 
+          currency={toCurrency} 
+          onChangeCurrency={onChangetoCurrency}
         />
-      </View>
     </SafeAreaView>
   );
 };
@@ -35,10 +35,8 @@ const ToContainer = ({
 const styles = StyleSheet.create({
   container: {
     justifyContent: "center",
-  },
-  view: {
-    alignItems: "flex-end",
-    flexDirection: "row",
+    width: "100%",
+    marginVertical: "1rem"
   },
 });
 

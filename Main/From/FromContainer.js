@@ -1,8 +1,10 @@
+// React
+import { SafeAreaView, StyleSheet } from "react-native";
+// Components
 import CountryInputField from "../../Global/CountryInputField";
-import Flag from "../../Global/Flag";
 import AmountInputField from "../../Global/AmountInputField";
-import CurrencyInputField from "../../Global/CurrencyInputField";
-import { SafeAreaView, StyleSheet, View } from "react-native";
+// import Flag from "../../Global/Flag";
+// import CurrencyInputField from "../../Global/CurrencyInputField";
 
 const FromContainer = ({
   fromCountry,
@@ -16,17 +18,16 @@ const FromContainer = ({
 }) => {
   return (
     <SafeAreaView style={styles.container}>
-      <View>
         <CountryInputField country={fromCountry} setCountry={setFromCountry} />
-      </View>
-      <View style={styles.view}>
-        <Flag text={fromCountryFlag} onChangeText={onChangefromCountryFlag} />
-        <AmountInputField text={fromAmount} onChangeText={onChangefromAmount} />
-        <CurrencyInputField
-          text={fromCurrency}
-          onChangeText={onChangefromCurrency}
+        <AmountInputField 
+          countryFlag={fromCountryFlag} 
+          onChangeCountryFlag={onChangefromCountryFlag}
+          amount={fromAmount} 
+          onChangeAmount={onChangefromAmount}
+          currency={fromCurrency}
+          onChangeCurrency={onChangefromCurrency}
+          ieAmount="1.00"
         />
-      </View>
     </SafeAreaView>
   );
 };
@@ -34,10 +35,8 @@ const FromContainer = ({
 const styles = StyleSheet.create({
   container: {
     justifyContent: "center",
-  },
-  view: {
-    alignItems: "flex-end",
-    flexDirection: "row",
+    width: "100%",
+    marginVertical: "1rem"
   },
 });
 

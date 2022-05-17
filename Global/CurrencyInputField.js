@@ -1,13 +1,13 @@
 import React from "react";
 import { SafeAreaView, StyleSheet, TextInput } from "react-native";
 
-const CurrencyInputField = ({ text, onChangeText }) => {
+const CurrencyInputField = ({ fromCurrency, onChangefromCurrency }) => {
   return (
     <SafeAreaView>
       <TextInput
         style={styles.input}
-        onChangeText={onChangeText}
-        value={text}
+        onChangeText={onChangefromCurrency}
+        value={fromCurrency}
       />
     </SafeAreaView>
   );
@@ -15,15 +15,22 @@ const CurrencyInputField = ({ text, onChangeText }) => {
 
 const styles = StyleSheet.create({
   input: {
-    height: 50,
-    width: 60,
-    margin: 8,
-    borderWidth: 1,
-    padding: 10,
-    borderRadius: 8,
-    fontFamily: "Raleway_800ExtraBold",
+    // height: 50,
+    width: "4rem",
+    // marginVertical: "1rem",
+    paddingVertical: "1rem",
+    alignSelf: "center",
     textAlign: "center",
-    backgroundColor: "rgba(255, 255, 255, .7)",
+    borderTopRightRadius: 8,
+    borderBottomRightRadius: 8,
+    backgroundColor: "rgba(255, 255, 255, .55)",
+    fontFamily: "Raleway_800ExtraBold",
+    fontSize: "1rem",
+    letterSpacing: 2,
+    shadowColor: '#151515',
+    shadowOffset: {width: 4, height: 4},
+    shadowOpacity: 0.3,
+    shadowRadius: 8,
   },
 });
 
