@@ -22,6 +22,7 @@ const styles = StyleSheet.create({
     padding: 10,
     borderRadius: 8,
     fontFamily: "Raleway_800ExtraBold",
+    textAlign: "center",
     marginTop: 50,
     backgroundColor: "rgba(255, 255, 255, .7)",
   },
