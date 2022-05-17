@@ -54,6 +54,7 @@ export default function App() {
   }
   useEffect(() => {
     setFromCurrency();
+
   });
 
   function setToCurrency() {
@@ -93,15 +94,18 @@ export default function App() {
       `${API_URL}/${API_KEY}/pair/${fromCurrency}/${toCurrency}/${fromAmount}`
     )
       .then((res) => res.json())
-      .then((data) => console.log(data))
-      // .then(data => {setState(data)})
+      .then((data) => {
+        console.log(data)
+        onChangetoAmount(data.conversion_result)
+        console.log(toAmount)
+      })
       .catch((error) => console.error(error));
 
   const pressHandler = () => {
     console.log(
       "i am a button and i just got clicked! and now I will fetch data"
     );
-    return fetchData();
+    return fetchData()
   };
 
   return (

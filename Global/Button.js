@@ -1,5 +1,5 @@
 import React from "react";
-import { View, Text, TouchableOpacity, StyleSheet } from "react-native";
+import { Text, TouchableOpacity, StyleSheet } from "react-native";
 import {
   Raleway_100Thin,
   Raleway_100Thin_Italic,
@@ -45,18 +45,15 @@ const FlatButton = ({ onPress, text }) => {
     Raleway_700Bold_Italic,
     Raleway_800ExtraBold,
     Raleway_800ExtraBold_Italic,
-    Raleway_900Black,
-    Raleway_900Black_Italic,
+    Raleway_900Black
   });
 
   if (!fontsLoaded) {
     return <AppLoading />;
   }
   return (
-    <TouchableOpacity onPress={onPress}>
-      <View style={styles.button}>
+    <TouchableOpacity onPress={onPress} style={styles.button}>
         <Text style={styles.buttonText}>{text}</Text>
-      </View>
     </TouchableOpacity>
   );
 };
@@ -65,12 +62,13 @@ export default FlatButton;
 
 const styles = StyleSheet.create({
   button: {
+    alignSelf: "center",
     paddingVertical: 14,
     paddingHorizontal: 16,
     borderRadius: 8,
-    backgroundColor: "#1E1D1Eda",
-    marginLeft: 12,
-    marginRight: 12,
+    backgroundColor: "#252525da",
+    marginTop: "2rem",
+    width: "23rem",
   },
   buttonText: {
     color: "#fff",
