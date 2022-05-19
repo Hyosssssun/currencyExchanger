@@ -32,8 +32,8 @@ const Main = () => {
   );
 
   const setCurrencies = (fromCountry, toCountry) => {
-    let from = setCountries(fromCountry)
-    let to = setCountries(toCountry)
+    const from = setCountries(fromCountry)
+    const to = setCountries(toCountry)
     if (from.length === 1) {
       onChangefromCountryFlag(from[0].currency.unicode);
       onChangefromCurrency(from[0].currency.code);
