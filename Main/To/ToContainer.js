@@ -19,15 +19,17 @@ const ToContainer = ({
 }) => {
   return (
     <SafeAreaView style={styles.container}>
-        <CountryInputField country={toCountry} setCountry={setToCountry} />
-        <AmountInputField 
-          countryFlag={toCountryFlag} 
-          onChangeCountryFlag={onChangetoCountryFlag} 
-          amount={toAmount} 
-          onChangeAmount={onChangetoAmount} 
-          currency={toCurrency} 
-          onChangeCurrency={onChangetoCurrency}
-        />
+      <CountryInputField country={toCountry} setCountry={setToCountry} />
+      <AmountInputField
+        countryFlag={toCountryFlag}
+        onChangeCountryFlag={onChangetoCountryFlag}
+        amount={toAmount}
+        onChangeAmount={onChangetoAmount}
+        currency={toCurrency}
+        onChangeCurrency={onChangetoCurrency}
+        ieFlag="🇰🇷"
+        ieCurrency="KRW"
+      />
     </SafeAreaView>
   );
 };
@@ -36,7 +38,7 @@ const styles = StyleSheet.create({
   container: {
     justifyContent: "center",
     width: "100%",
-    marginVertical: "1rem"
+    marginVertical: "1rem",
   },
 });
 

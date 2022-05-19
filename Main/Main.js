@@ -11,14 +11,14 @@ import CountryAndCurrency from "@workmate/country-and-currency";
 
 const Main = () => {
   const [fromCountry, setFromCountry] = useState("");
-  const [fromCountryFlag, onChangefromCountryFlag] = useState("🇵🇱");
+  const [fromCountryFlag, onChangefromCountryFlag] = useState("");
   const [fromAmount, onChangefromAmount] = useState("");
-  const [fromCurrency, onChangefromCurrency] = useState("PLN");
+  const [fromCurrency, onChangefromCurrency] = useState("");
 
   const [toCountry, setToCountry] = useState("");
-  const [toCountryFlag, onChangetoCountryFlag] = useState("🇰🇷");
+  const [toCountryFlag, onChangetoCountryFlag] = useState("");
   const [toAmount, onChangetoAmount] = useState("");
-  const [toCurrency, onChangetoCurrency] = useState("KRW");
+  const [toCurrency, onChangetoCurrency] = useState("");
 
   const uppercaseWords = (str) =>
     str.replace(/^(.)|\s+(.)/g, (c) => c.toUpperCase());
@@ -54,8 +54,9 @@ const Main = () => {
       .then((res) => res.json())
       .then((data) => {
         console.log(data);
-        onChangetoAmount(data.conversion_result);
-        console.log(toAmount);
+        const twoDecimalAmount = data.conversion_result.toFixed(2);
+        onChangetoAmount(twoDecimalAmount);
+        // console.log(toAmount);
       })
       .catch((error) => console.error(error));
 
