@@ -1,6 +1,6 @@
 // React
 import React from "react";
-import { SafeAreaView, StyleSheet, TextInput, Image } from "react-native";
+import { SafeAreaView, StyleSheet, TextInput, Image, View } from "react-native";
 
 const AmountInputField = ({
   onChangeCountryFlag,
@@ -14,21 +14,23 @@ const AmountInputField = ({
 }) => {
   return (
     <SafeAreaView style={styles.inputContainer}>
-      <Image style={styles.flag} source={countryFlag} editable={false} />
-      <TextInput
-        style={styles.amount}
-        onChangeText={onChangeAmount}
-        value={amount}
-        placeholder={ieAmount}
-      />
-      <TextInput
-        style={styles.currency}
-        onChangeText={onChangeCurrency}
-        value={currency}
-        placeholder={ieCurrency}
-        editable={false}
-        selectTextOnFocus={false}
-      />
+      <View style={styles.sectionStyle}>
+        <Image source={countryFlag} style={styles.flag} editable={false} />
+        <TextInput
+          style={styles.amount}
+          onChangeText={onChangeAmount}
+          value={amount}
+          placeholder={ieAmount}
+        />
+        <TextInput
+          style={styles.currency}
+          onChangeText={onChangeCurrency}
+          value={currency}
+          placeholder={ieCurrency}
+          editable={false}
+          selectTextOnFocus={false}
+        />
+      </View>
     </SafeAreaView>
   );
 };
@@ -47,10 +49,17 @@ const styles = StyleSheet.create({
     shadowOpacity: 0.3,
     shadowRadius: 8,
   },
+  sectionStyle: {
+    flex: 1,
+    flexDirection: "row",
+    alignItems: "center",
+  },
   flag: {
     width: "20%",
     paddingVertical: "1rem",
-    borderRadius: "5%",
+    paddingHorizontal: "1rem",
+    resizeMode: "contain",
+    alignItems: "center",
   },
   amount: {
     width: "60%",

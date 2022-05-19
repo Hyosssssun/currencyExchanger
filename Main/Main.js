@@ -23,9 +23,6 @@ const Main = () => {
   const uppercaseWords = (str) =>
     str.replace(/^(.)|\s+(.)/g, (c) => c.toUpperCase());
 
-  const countries = CountryAndCurrency.getCountries();
-  console.log(countries);
-
   const setCountries = (country) =>
     CountryAndCurrency.getCountriesBy("name", uppercaseWords(country));
 
