@@ -30,10 +30,11 @@ const styles = StyleSheet.create({
     fontFamily: "Raleway_800ExtraBold",
     fontSize: "1.2rem",
     letterSpacing: 2,
-    shadowColor: '#151515',
-    shadowOffset: {width: 4, height: 4},
+    shadowColor: "#151515",
+    shadowOffset: { width: 4, height: 4 },
     shadowOpacity: 0.3,
     shadowRadius: 4,
+    outlineStyle: "none",
   },
 });
 
