@@ -23,6 +23,9 @@ const Main = () => {
   const uppercaseWords = (str) =>
     str.replace(/^(.)|\s+(.)/g, (c) => c.toUpperCase());
 
+  const countries = CountryAndCurrency.getCountries();
+  console.log(countries);
+
   const setCountries = (country) =>
     CountryAndCurrency.getCountriesBy("name", uppercaseWords(country));
 
@@ -30,11 +33,11 @@ const Main = () => {
     const from = setCountries(fromCountry);
     const to = setCountries(toCountry);
     if (from.length === 1) {
-      onChangefromCountryFlag(from[0].currency.unicode);
+      onChangefromCountryFlag(from[0].flag);
       onChangefromCurrency(from[0].currency.code);
     }
     if (to.length === 1) {
-      onChangetoCountryFlag(to[0].currency.unicode);
+      onChangetoCountryFlag(to[0].flag);
       onChangetoCurrency(to[0].currency.code);
     }
   };

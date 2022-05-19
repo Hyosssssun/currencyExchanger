@@ -27,7 +27,6 @@ const FromContainer = ({
         currency={fromCurrency}
         onChangeCurrency={onChangefromCurrency}
         ieAmount="1.00"
-        ieFlag="🇵🇱"
         ieCurrency="PLN"
       />
     </SafeAreaView>

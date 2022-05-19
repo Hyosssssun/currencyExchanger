@@ -1,11 +1,10 @@
 // React
 import React from "react";
-import { SafeAreaView, StyleSheet, TextInput } from "react-native";
+import { SafeAreaView, StyleSheet, TextInput, Image } from "react-native";
 
 const AmountInputField = ({
   onChangeCountryFlag,
   countryFlag,
-  ieFlag,
   amount,
   onChangeAmount,
   ieAmount,
@@ -15,14 +14,7 @@ const AmountInputField = ({
 }) => {
   return (
     <SafeAreaView style={styles.inputContainer}>
-      <TextInput
-        style={styles.flag}
-        onChangeText={onChangeCountryFlag}
-        value={countryFlag}
-        placeholder={ieFlag}
-        editable={false}
-        selectTextOnFocus={false}
-      />
+      <Image style={styles.flag} source={countryFlag} editable={false} />
       <TextInput
         style={styles.amount}
         onChangeText={onChangeAmount}
@@ -58,7 +50,7 @@ const styles = StyleSheet.create({
   flag: {
     width: "20%",
     paddingVertical: "1rem",
-    textAlign: "center",
+    borderRadius: "5%",
   },
   amount: {
     width: "60%",
