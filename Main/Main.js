@@ -4,14 +4,12 @@ import { View, StyleSheet } from "react-native";
 // Components
 import FromContainer from "./From/FromContainer.js";
 import ToContainer from "./To/ToContainer.js";
-import FlatButton from "../Global/Button"
+import FlatButton from "../Global/Button";
 // Utils
 import { API_URL, API_KEY } from "@env";
 import CountryAndCurrency from "@workmate/country-and-currency";
 
-
 const Main = () => {
-
   const [fromCountry, setFromCountry] = useState("");
   const [fromCountryFlag, onChangefromCountryFlag] = useState("");
   const [fromAmount, onChangefromAmount] = useState("");
@@ -22,27 +20,24 @@ const Main = () => {
   const [toAmount, onChangetoAmount] = useState("");
   const [toCurrency, onChangetoCurrency] = useState("");
 
-
   const uppercaseWords = (str) =>
     str.replace(/^(.)|\s+(.)/g, (c) => c.toUpperCase());
 
-  const setCountries = (country) => CountryAndCurrency.getCountriesBy(
-    "name",
-    uppercaseWords(country)
-  );
+  const setCountries = (country) =>
+    CountryAndCurrency.getCountriesBy("name", uppercaseWords(country));
 
   const setCurrencies = (fromCountry, toCountry) => {
-    const from = setCountries(fromCountry)
-    const to = setCountries(toCountry)
+    const from = setCountries(fromCountry);
+    const to = setCountries(toCountry);
     if (from.length === 1) {
-      onChangefromCountryFlag(from[0].currency.unicode);
+      onChangefromCountryFlag(from[0].flag);
       onChangefromCurrency(from[0].currency.code);
     }
     if (to.length === 1) {
-      onChangetoCountryFlag(to[0].currency.unicode);
+      onChangetoCountryFlag(to[0].flag);
       onChangetoCurrency(to[0].currency.code);
     }
-  }
+  };
 
   useEffect(() => {
     setCurrencies(fromCountry, toCountry);
@@ -58,14 +53,15 @@ const Main = () => {
     )
       .then((res) => res.json())
       .then((data) => {
-        console.log(data)
-        onChangetoAmount(data.conversion_result)
-        console.log(toAmount)
+        console.log(data);
+        const twoDecimalAmount = data.conversion_result.toFixed(2);
+        onChangetoAmount(twoDecimalAmount);
+        // console.log(toAmount);
       })
       .catch((error) => console.error(error));
 
   const pressHandler = () => {
-    return fetchData()
+    return fetchData();
   };
 
   return (
@@ -90,7 +86,7 @@ const Main = () => {
         toCurrency={toCurrency}
         onChangetoCurrency={onChangetoCurrency}
       />
-       <FlatButton text="Exchange Currency!" onPress={pressHandler} />
+      <FlatButton text="Show Me The Money!" onPress={pressHandler} />
     </View>
   );
 };
@@ -101,7 +97,7 @@ const styles = StyleSheet.create({
     alignSelf: "center",
     justifyContent: "center",
     marginVertical: "4rem",
-    width: "100%"
+    width: "100%",
   },
 });
 
