@@ -10,8 +10,11 @@ And also to collaborate for the first time and have fun together!
 
 ## Demo
 
-![App demo on iPhone 12 PRO](https://user-images.githubusercontent.com/93612381/169525343-776fad4c-6c34-4b78-94c7-5b9ade4d424c.gif)
-**iPhone 12 PRO**
+<div align="center">
+<img src="https://user-images.githubusercontent.com/93612381/169525343-776fad4c-6c34-4b78-94c7-5b9ade4d424c.gif" alt="App demo on iPhone 12 PRO" />
+
+<p style="font-weight: bold">iPhone 12 PRO</p>
+</div>
 
 ## Technologies
 
@@ -32,6 +35,7 @@ Our next sprint will include these improvements:
 Currently, the app does not allow for the exchange of two countries:
 
 1. **Cuba** - the [Country and Currency library](https://github.com/work-mate/country-and-currency-ts) that authors use, lists the currency code as CUC (Cuban Convertible Peso). This is unfortunate because the currency is no longer used in Cuba (it is Cuban Peso (CUP) only now), therefore, the [ExchangeRate API](https://www.exchangerate-api.com) does not recognise the code and will not exchange the currency.
+
    _This will be remedied with future releases of the app._
 
 2. **North Korea** - the [ExchangeRate API](https://www.exchangerate-api.com) does not offer exchange rate data for North Korean Won (KPW) due to sanctions and lack of any international trade. See further information [here](https://www.exchangerate-api.com/docs/supported-currencies).
