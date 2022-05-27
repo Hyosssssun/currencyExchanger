@@ -11,12 +11,16 @@ import CountryAndCurrency from "@workmate/country-and-currency";
 
 const Main = () => {
   const [fromCountry, setFromCountry] = useState("");
-  const [fromCountryFlag, onChangefromCountryFlag] = useState("");
+  const [fromCountryFlag, onChangefromCountryFlag] = useState(
+    "https://upload.wikimedia.org/wikipedia/en/1/12/Flag_of_Poland.svg"
+  );
   const [fromAmount, onChangefromAmount] = useState("");
   const [fromCurrency, onChangefromCurrency] = useState("");
 
   const [toCountry, setToCountry] = useState("");
-  const [toCountryFlag, onChangetoCountryFlag] = useState("");
+  const [toCountryFlag, onChangetoCountryFlag] = useState(
+    "https://upload.wikimedia.org/wikipedia/commons/0/09/Flag_of_South_Korea.svg"
+  );
   const [toAmount, onChangetoAmount] = useState("");
   const [toCurrency, onChangetoCurrency] = useState("");
 
