@@ -8,6 +8,7 @@ npm-debug.*
 *.key
 *.mobileprovision
 *.orig.*
+web-build/
 
 # macOS
 .DS_Store
@@ -16,3 +17,5 @@ npm-debug.*
 .env
 
 keystore.png
+# Local Netlify folder
+.netlify
