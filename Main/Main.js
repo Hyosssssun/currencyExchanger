@@ -100,8 +100,8 @@ const styles = StyleSheet.create({
     alignItems: "center",
     alignSelf: "center",
     justifyContent: "center",
-    marginVertical: "4rem",
-    width: "100%",
+    // marginVertical: "4rem",
+    // width: "100%",
   },
 });
 

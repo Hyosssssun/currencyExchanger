@@ -35,8 +35,8 @@ const ToContainer = ({
 const styles = StyleSheet.create({
   container: {
     justifyContent: "center",
-    width: "100%",
-    marginVertical: "1rem",
+    // width: "100%",
+    // marginVertical: "1rem",
   },
 });
 
