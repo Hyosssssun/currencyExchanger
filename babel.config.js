@@ -10,6 +10,11 @@ module.exports = function(api) {
           "safe": false,
           "allowUndefined": true,
           "verbose": false
+    }],
+    ["module-resolver", {
+      "alias": {
+        "^react-native$": "react-native-web"
+      }
     }]
   ]
   };
