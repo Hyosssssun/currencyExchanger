@@ -18,7 +18,7 @@ export default function App() {
     <View style={styles.container}>
       <ImageBackground source={image} resizeMode="cover" style={styles.image}>
         <StatusBar style="auto" />
-        <Text style={styles.header}> Hi! Currency Exchanger</Text>
+        <Text style={styles.header}> Currency Exchange</Text>
         <Main />
         <Text style={styles.footer}> All Rights Reserved By S&S © 2022</Text>
       </ImageBackground>
