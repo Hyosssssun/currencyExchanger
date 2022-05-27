@@ -1,5 +1,5 @@
 // React
-import React from "react";
+// import React from "react";
 import { StatusBar } from "expo-status-bar";
 import { StyleSheet, Text, View, ImageBackground } from "react-native";
 // Components
@@ -14,45 +14,55 @@ export default function App() {
   };
 
   return (
-    // <TailwindProvider utilities={utilities}>
     <View style={styles.container}>
-      <ImageBackground source={image} resizeMode="cover" style={styles.image}>
-        <StatusBar style="auto" />
-        <Text style={styles.header}> Currency Exchange</Text>
+    <ImageBackground source={image} resizeMode="cover" style={styles.image}>
+      <StatusBar style="auto" />
+        <Text style={styles.header}>Currency Exchange</Text>
         <Main />
-        <Text style={styles.footer}> All Rights Reserved By S&S © 2022</Text>
-      </ImageBackground>
+        <Text style={styles.footer}>All Rights Reserved By S&S © 2022</Text>
+        </ImageBackground>
     </View>
-    // </TailwindProvider>
   );
 }
+//  // <TailwindProvider utilities={utilities}>
+//  <View style={styles.container}>
+//  <ImageBackground source={image} resizeMode="cover" style={styles.image}>
+//    <StatusBar style="auto" />
+//    <Text style={styles.header}> Currency Exchange</Text>
+//    <Main />
+//  </ImageBackground>
+// </View>
+// // </TailwindProvider>
 
 const styles = StyleSheet.create({
   container: {
-    // width: "100vw",
+    // // width: "100vw",
     flex: 1,
-    // alignItems: "center",
-    // justifyContent: "center",
+    // // alignItems: "center",
+    // // justifyContent: "center",
   },
   image: {
     flex: 1,
-    justifyContent: "center",
+    justifyContent: "center"
   },
   header: {
-    // width: "90%",
-    alignSelf: "center",
+    // // width: "90%",
+    // alignSelf: "center",
+    marginBottom: 30,
     textAlign: "center",
-    // fontFamily: "Raleway_900Black",
-    // fontSize: "3rem",
+    // // fontFamily: "Raleway_900Black",
+    fontSize: 40,
+    fontWeight: "800",
     color: "#fffaf0",
     letterSpacing: 4,
   },
   footer: {
-    // width: "90%",
+    // // width: "90%",
     alignSelf: "center",
     textAlign: "center",
     // fontFamily: "Raleway_800ExtraBold",
-    // fontSize: "1rem",
+    fontWeight: "800",
+    fontSize: 15,
     color: "#fffaf0",
     letterSpacing: 1.5,
     position: "absolute",

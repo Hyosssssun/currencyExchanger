@@ -1,10 +1,10 @@
-// React
-import React from "react";
+// // React
+// import React from "react";
 import { SafeAreaView, StyleSheet, TextInput, Image, View } from "react-native";
 
 const AmountInputField = ({
-  onChangeCountryFlag,
-  countryFlag,
+  // onChangeCountryFlag,
+  // countryFlag,
   amount,
   onChangeAmount,
   ieAmount,
@@ -14,9 +14,9 @@ const AmountInputField = ({
 }) => {
   return (
     <SafeAreaView style={styles.inputContainer}>
-      <View style={styles.sectionStyle}>
-        <Image source={countryFlag} style={styles.flag} editable={false} />
-        <TextInput
+    <View style={styles.sectionStyle}>
+         {/* <Image source={countryFlag} style={styles.flag} editable={false} /> */}
+         <TextInput
           style={styles.amount}
           onChangeText={onChangeAmount}
           value={amount}
@@ -30,16 +30,15 @@ const AmountInputField = ({
           editable={false}
           selectTextOnFocus={false}
         />
-      </View>
+        </View>
     </SafeAreaView>
-  );
+  )
 };
 
 const styles = StyleSheet.create({
   inputContainer: {
-    // width: "80%",
-    // marginVertical: "0.3rem",
-    flex: 1,
+    width: 300,
+    marginVertical: 6,
     flexDirection: "row",
     alignSelf: "center",
     borderRadius: 8,
@@ -52,32 +51,32 @@ const styles = StyleSheet.create({
   sectionStyle: {
     flex: 1,
     flexDirection: "row",
-    alignItems: "center",
+//     // alignItems: "center",
   },
   flag: {
-    // width: "20%",
-    // paddingVertical: "1rem",
-    // paddingHorizontal: "1rem",
+//     // // width: "20%",
+//     // // paddingVertical: "1rem",
+//     // // paddingHorizontal: "1rem",
     resizeMode: "contain",
-    alignItems: "center",
+//     // alignItems: "center",
   },
   amount: {
-    // width: "60%",
-    // paddingVertical: "1rem",
+    width: 180,
+//     // // paddingVertical: "1rem",
     textAlign: "center",
     color: "#252525",
-    // fontFamily: "Raleway_800ExtraBold",
-    // fontSize: "1.3rem",
+//     // // fontFamily: "Raleway_800ExtraBold",
+    fontSize: 20,
     letterSpacing: 2,
-    outlineStyle: "none",
+//     // outlineStyle: "none",
   },
   currency: {
-    // width: "20%",
-    // paddingVertical: "1rem",
+    width: 60,
+//     // // paddingVertical: "1rem",
     textAlign: "center",
     color: "#252525",
-    // fontFamily: "Raleway_800ExtraBold",
-    // fontSize: "1rem",
+//     // // fontFamily: "Raleway_800ExtraBold",
+    fontSize: 20,
     letterSpacing: 2,
   },
 });
