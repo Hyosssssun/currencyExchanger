@@ -4,8 +4,6 @@ import { SafeAreaView, StyleSheet } from "react-native";
 // Components
 import CountryInputField from "../../Global/CountryInputField";
 import AmountInputField from "../../Global/AmountInputField";
-// import Flag from "../../Global/Flag";
-// import CurrencyInputField from "../../Global/CurrencyInputField";
 
 const ToContainer = ({
   toCountry,
