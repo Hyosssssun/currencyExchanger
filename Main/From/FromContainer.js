@@ -3,6 +3,8 @@ import { SafeAreaView, StyleSheet } from "react-native";
 // Components
 import CountryInputField from "../../Global/CountryInputField";
 import AmountInputField from "../../Global/AmountInputField";
+// util
+import tw from 'twrnc';
 
 const FromContainer = ({
   fromCountry,
@@ -15,7 +17,7 @@ const FromContainer = ({
   onChangefromCurrency,
 }) => {
   return (
-    <SafeAreaView style={styles.container}>
+    <SafeAreaView style={tw`justify-center w-full my-4`}>
       <CountryInputField country={fromCountry} setCountry={setFromCountry} />
       <AmountInputField
         countryFlag={fromCountryFlag}
