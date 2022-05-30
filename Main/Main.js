@@ -5,7 +5,8 @@ import { View, StyleSheet } from "react-native";
 import FromContainer from "./From/FromContainer.js";
 import ToContainer from "./To/ToContainer.js";
 import FlatButton from "../Global/Button";
-// Utils
+// util
+import tw from 'twrnc';
 import { API_URL, API_KEY } from "@env";
 import CountryAndCurrency from "@workmate/country-and-currency";
 
@@ -69,7 +70,7 @@ const Main = () => {
   };
 
   return (
-    <View style={styles.container}>
+    <View style={tw`items-center self-center justify-center my-16 w-full`}>
       <FromContainer
         fromCountry={fromCountry}
         setFromCountry={setFromCountry}
@@ -95,14 +96,14 @@ const Main = () => {
   );
 };
 
-const styles = StyleSheet.create({
-  container: {
-    alignItems: "center",
-    alignSelf: "center",
-    justifyContent: "center",
-    marginVertical: "4rem",
-    width: "100%",
-  },
-});
+// const styles = StyleSheet.create({
+//   container: {
+//     alignItems: "center",
+//     alignSelf: "center",
+//     justifyContent: "center",
+//     marginVertical: "4rem",
+//     width: "100%",
+//   },
+// });
 
 export default Main;
