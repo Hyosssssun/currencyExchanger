@@ -5,7 +5,7 @@ import { StyleSheet, Text, View, ImageBackground } from "react-native";
 // Components
 import Main from "./Main/Main";
 // Utils
-import tw from 'twrnc';
+import tw from "twrnc";
 // import { TailwindProvider } from 'tailwind-rn';
 // import utilities from './tailwind.json';
 
@@ -13,6 +13,7 @@ export default function App() {
   const image = {
     uri: "https://images.unsplash.com/photo-1612540646801-4d5d183e6bc1?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80",
   };
+  
   return (
     <View style={tw`flex-1 items-center justify-center w-full`}>
       <ImageBackground source={image} resizeMode="cover" style={tw`flex-1 justify-center`}>
