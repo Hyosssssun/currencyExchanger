@@ -5,7 +5,7 @@ import { StyleSheet, Text, View, ImageBackground } from "react-native";
 // Components
 import Main from "./Main/Main";
 // Utils
-import tw from 'twrnc';
+import tw from "twrnc";
 // import { TailwindProvider } from 'tailwind-rn';
 // import utilities from './tailwind.json';
 
@@ -27,9 +27,10 @@ export default function App() {
     // // </TailwindProvider>
     // <TailwindProvider utilities={utilities}>
     <View>
-        <StatusBar style="auto" />
-        <Text style={tw`bg-blue-100`}> Currency Exchange</Text>
-        <Text style={tw`bg-red-800`}> All Rights Reserved By S&S © 2022</Text>
+      <StatusBar style="auto" />
+      <Text style={tw`bg-blue-100`}> Currency Exchange</Text>
+      <Main />
+      <Text style={tw`bg-red-800`}> All Rights Reserved By S&S © 2022</Text>
     </View>
     // </TailwindProvider>
   );
