@@ -48,6 +48,7 @@ const FlatButton = ({ onPress, text }) => {
     Raleway_800ExtraBold,
     Raleway_800ExtraBold_Italic,
     Raleway_900Black,
+    Raleway_900Black_Italic,
   });
 
   if (!fontsLoaded) {

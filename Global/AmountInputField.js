@@ -65,7 +65,7 @@ const AmountInputField = ({
             "text-[#252525]",
             "text-base",
             "tracking-widest",
-            { fontFamily: "Raleway_800ExtraBold" }
+            { outlineStyle: "none", fontFamily: "Raleway_800ExtraBold" }
           )}
           onChangeText={onChangeCurrency}
           value={currency}
@@ -77,6 +77,8 @@ const AmountInputField = ({
     </SafeAreaView>
   );
 };
+
+export default AmountInputField;
 
 // const styles = StyleSheet.create({
 //   inputContainer: {
@@ -124,5 +126,3 @@ const AmountInputField = ({
 //   //   letterSpacing: 2, // tracking-wide
 //   // },
 // });
-
-export default AmountInputField;
