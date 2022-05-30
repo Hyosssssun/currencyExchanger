@@ -7,9 +7,9 @@ const CountryInputField = ({ country, setCountry }) => {
     <SafeAreaView>
       <TextInput
         style={styles.input}
-        onChangeText={(newText) => setCountry(newText)}
+        onChangeText={newText => setCountry(newText)}
         defaultValue={country}
-        autoCapitalize="words"
+        autoCapitalize={'characters'}
         placeholder="Enter the country"
       />
      </SafeAreaView>
@@ -25,7 +25,7 @@ const styles = StyleSheet.create({
     textAlign: "center",
     backgroundColor: "rgba(255, 255, 255, .65)",
     borderRadius: 8,
-    textTransform: "uppercase",
+    // textTransform: "uppercase",
     color: "#252525",
 //     // // fontFamily: "Raleway_800ExtraBold",
     fontSize: 20,

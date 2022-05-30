@@ -6,7 +6,7 @@ import FromContainer from './From/FromContainer.js';
 import ToContainer from './To/ToContainer.js';
 import FlatButton from '../Global/Button.js';
 // // Utils
-import { REACT_APP_API_URL, REACT_APP_API_KEY } from '@env';
+import { API_URL, API_KEY } from '@env';
 import CountryAndCurrency from '@workmate/country-and-currency';
 
 const Main = () => {
@@ -53,7 +53,8 @@ const Main = () => {
 	//  can be separated to 'helper.js' file later.
 	const fetchData = () =>
 		fetch(
-			`${REACT_APP_API_URL}/${REACT_APP_API_KEY}/pair/${fromCurrency}/${toCurrency}/${fromAmount}`
+			// `${API_URL}/${API_KEY}/pair/${fromCurrency}/${toCurrency}/${fromAmount}`
+			`https://v6.exchangerate-api.com/v6/08492a61124915cf3422b559/pair/${fromCurrency}/${toCurrency}/${fromAmount}`
 		)
 			.then((res) => res.json())
 			.then((data) => {

@@ -1,11 +1,11 @@
 {
   "files": {
-    "app.js": "/static/js/app.c56c1421.chunk.js",
-    "app.js.map": "/static/js/app.c56c1421.chunk.js.map",
+    "app.js": "/static/js/app.a73107de.chunk.js",
+    "app.js.map": "/static/js/app.a73107de.chunk.js.map",
     "runtime~app.js": "/static/js/runtime~app.2e9f1821.js",
     "runtime~app.js.map": "/static/js/runtime~app.2e9f1821.js.map",
-    "static/js/2.af13938d.chunk.js": "/static/js/2.af13938d.chunk.js",
-    "static/js/2.af13938d.chunk.js.map": "/static/js/2.af13938d.chunk.js.map",
+    "static/js/2.1a0e8ec3.chunk.js": "/static/js/2.1a0e8ec3.chunk.js",
+    "static/js/2.1a0e8ec3.chunk.js.map": "/static/js/2.1a0e8ec3.chunk.js.map",
     "fonts/Raleway_100Thin.ttf": "/./fonts/Raleway_100Thin.ttf",
     "fonts/Raleway_100Thin_Italic.ttf": "/./fonts/Raleway_100Thin_Italic.ttf",
     "fonts/Raleway_200ExtraLight.ttf": "/./fonts/Raleway_200ExtraLight.ttf",
@@ -30,11 +30,11 @@
     "index.html": "/index.html",
     "manifest.json": "/manifest.json",
     "serve.json": "/serve.json",
-    "static/js/2.af13938d.chunk.js.LICENSE.txt": "/static/js/2.af13938d.chunk.js.LICENSE.txt"
+    "static/js/2.1a0e8ec3.chunk.js.LICENSE.txt": "/static/js/2.1a0e8ec3.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime~app.2e9f1821.js",
-    "static/js/2.af13938d.chunk.js",
-    "static/js/app.c56c1421.chunk.js"
+    "static/js/2.1a0e8ec3.chunk.js",
+    "static/js/app.a73107de.chunk.js"
   ]
 }
