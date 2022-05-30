@@ -17,10 +17,10 @@ const AmountInputField = ({
   return (
     <SafeAreaView
       style={tw.style(
-        `w-4/5, my-1.3, flex-1, flex-row, self-center, rounded-lg, bg-[rgba(255, 255, 255, .65)], shadow-[#151515]`
+        `w-4/5, my-1.3, flex-1, flex-row, self-center, rounded-lg, shadow-[#151515]`
       )}
     >
-      <View style={tw.style(`flex-1, flex-row && items-center`)}>
+      <View style={tw.style(`flex-1 bg-[#ffffffa6] flex-row && items-center`)}>
         <Image
           source={countryFlag}
           style={tw.style(`w-1/5, py-4, px-4, items-center`, {
@@ -31,7 +31,7 @@ const AmountInputField = ({
         <TextInput
           style={tw.style(
             `w-3/5, py-4, text-center, text-[#252525], font-["Raleway_800ExtraBold"], text-xl, tracking-wide`,
-            { outlineStyle: "none" }
+            { outlineStyle: "none", fontFamily: "Raleway_800ExtraBold" }
           )}
           onChangeText={onChangeAmount}
           value={amount}

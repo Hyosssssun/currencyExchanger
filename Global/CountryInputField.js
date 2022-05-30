@@ -8,7 +8,7 @@ const CountryInputField = ({ country, setCountry }) => {
   return (
     <SafeAreaView>
       <TextInput
-        style={tw`w-4/5 my-1 py-4 self-center text-center bg-[#ffffffa6] rounded-lg uppercase text-neutral-800 text-lg tracking-wide shadow-2xl shadow-neutral-900 outline-none`}
+        style={tw.style(`w-4/5 my-1 py-4 self-center text-center bg-[#ffffffa6] rounded-lg uppercase text-neutral-800 text-lg tracking-wide shadow-2xl shadow-neutral-900`, { outlineStyle: "none" })}
         onChangeText={(newText) => setCountry(newText)}
         defaultValue={country}
         autoCapitalize="words"
