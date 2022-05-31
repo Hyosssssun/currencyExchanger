@@ -32,7 +32,8 @@ export default function App() {
 						'text-5xl',
 						'tracking-widest',
 						'text-[#fffaf0]',
-						'font-bold'
+						'font-bold',
+            { fontFamily: 'Raleway_800ExtraBold' }
 					)}
 				>
 					{' '}
