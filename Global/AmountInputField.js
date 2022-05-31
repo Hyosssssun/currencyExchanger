@@ -1,81 +1,81 @@
 // React
-import React from "react";
-import { SafeAreaView, TextInput, Image, View } from "react-native";
+import React from 'react';
+import { SafeAreaView, TextInput, Image, View } from 'react-native';
 // Utils
-import tw from "twrnc";
+import tw from 'twrnc';
 
 const AmountInputField = ({
-  onChangeCountryFlag,
-  countryFlag,
-  amount,
-  onChangeAmount,
-  ieAmount,
-  currency,
-  onChangeCurrency,
-  ieCurrency,
+	onChangeCountryFlag,
+	countryFlag,
+	amount,
+	onChangeAmount,
+	ieAmount,
+	currency,
+	onChangeCurrency,
+	ieCurrency,
 }) => {
-  return (
-    <SafeAreaView
-      style={tw.style(
-        "w-4/5",
-        "my-1.3",
-        "flex-1",
-        "flex-row",
-        "self-center",
-        "shadow-[#151515]",
-        "shadow-2xl",
-        "shadow-neutral-900"
-      )}
-    >
-      <View
-        style={tw.style(
-          "flex-1",
-          "bg-[#ffffffa6]",
-          "rounded-lg",
-          "flex-row",
-          "items-center"
-        )}
-      >
-        <Image
-          source={countryFlag}
-          style={tw.style("w-1/5", "py-4", "px-4", "items-center", {
-            resizeMode: "contain",
-          })}
-          editable={false}
-        />
-        <TextInput
-          style={tw.style(
-            "w-3/5",
-            "py-4",
-            "text-center",
-            "text-[#252525]",
-            "text-xl",
-            "tracking-widest",
-            { outlineStyle: "none", fontFamily: "Raleway_800ExtraBold" }
-          )}
-          onChangeText={onChangeAmount}
-          value={amount}
-          placeholder={ieAmount}
-        />
-        <TextInput
-          style={tw.style(
-            "w-1/5",
-            "py-4",
-            "text-center",
-            "text-[#252525]",
-            "text-base",
-            "tracking-widest",
-            { outlineStyle: "none", fontFamily: "Raleway_800ExtraBold" }
-          )}
-          onChangeText={onChangeCurrency}
-          value={currency}
-          placeholder={ieCurrency}
-          editable={false}
-          selectTextOnFocus={false}
-        />
-      </View>
-    </SafeAreaView>
-  );
+	return (
+		<SafeAreaView
+			style={tw.style(
+				'w-4/5',
+				'my-1.3',
+				'flex-1',
+				'flex-row',
+				'self-center',
+				'shadow-[#151515]',
+				'shadow-2xl',
+				'shadow-neutral-900'
+			)}
+		>
+			<View
+				style={tw.style(
+					'flex-1',
+					'bg-[#ffffffa6]',
+					'rounded-lg',
+					'flex-row',
+					'items-center'
+				)}
+			>
+				<Image
+					source={countryFlag}
+					style={tw.style('w-1/5', 'py-4', 'px-4', 'items-center', {
+						resizeMode: 'contain',
+					})}
+					editable={false}
+				/>
+				<TextInput
+					style={tw.style(
+						'w-3/5',
+						'py-4',
+						'text-center',
+						'text-[#252525]',
+						'text-xl',
+						'tracking-widest',
+						{ outlineStyle: 'none', fontFamily: 'Raleway_800ExtraBold' }
+					)}
+					onChangeText={onChangeAmount}
+					value={amount}
+					placeholder={ieAmount}
+				/>
+				<TextInput
+					style={tw.style(
+						'w-1/5',
+						'py-4',
+						'text-center',
+						'text-[#252525]',
+						'text-base',
+						'tracking-widest',
+						{ outlineStyle: 'none', fontFamily: 'Raleway_800ExtraBold' }
+					)}
+					onChangeText={onChangeCurrency}
+					value={currency}
+					placeholder={ieCurrency}
+					editable={false}
+					selectTextOnFocus={false}
+				/>
+			</View>
+		</SafeAreaView>
+	);
 };
 
 export default AmountInputField;
