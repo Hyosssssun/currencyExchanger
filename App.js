@@ -33,7 +33,7 @@ export default function App() {
 						'tracking-widest',
 						'text-[#fffaf0]',
 						'font-bold',
-            { fontFamily: 'Raleway_800ExtraBold' }
+						{ fontFamily: 'Raleway_900Black' }
 					)}
 				>
 					{' '}
@@ -50,10 +50,10 @@ export default function App() {
 						'text-[#fffaf0]',
 						'absolute',
 						'bottom-5',
-						'font-semibold'
+						'font-semibold',
+						{ fontFamily: 'Raleway_800ExtraBold' }
 					)}
 				>
-					{' '}
 					All Rights Reserved By S&S © 2022
 				</Text>
 			</ImageBackground>
