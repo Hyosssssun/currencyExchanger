@@ -1,8 +1,17 @@
+import plugin from 'twrnc';
+
 module.exports = {
-  corePlugins: require("tailwind-rn/unsupported-core-plugins"),
-  content: ["./src/**/*.{js,jsx}"],
-  theme: {
-    extend: {},
-  },
-  plugins: [],
+	content: ['./src/**/*.{js,jsx}'],
+	theme: {
+    fontFamily: {
+      display: 'Raleway',
+      body: 'Raleway',
+    },
+		extend: {},
+	},
+	plugins: [
+		plugin(({ addUtilities }) => {
+			addUtilities({});
+		}),
+	],
 };
