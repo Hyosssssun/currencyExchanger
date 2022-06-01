@@ -6,8 +6,6 @@ import { Text, View, ImageBackground } from 'react-native';
 import Main from './Main/Main';
 // Utils
 import tw from 'twrnc';
-// import { TailwindProvider } from 'tailwind-rn';
-// import utilities from './tailwind.json';
 
 export default function App() {
 	const image = {
@@ -21,7 +19,7 @@ export default function App() {
 			<ImageBackground
 				source={image}
 				resizeMode='cover'
-				style={tw`flex-1 justify-center`}
+				style={tw.style('flex-1', 'justify-center')}
 			>
 				<StatusBar style='auto' />
 				<Text
@@ -79,7 +77,7 @@ export default function App() {
 //     // fontSize: "3rem",
 //     // letterSpacing: 4,
 //     // color: "#fffaf0",
-//     // fontFamily: "Raleway_900Black",---------------------------------
+//     // fontFamily: "Raleway_900Black",
 //   },
 //   footer: {
 //     // width: "90%",
@@ -90,6 +88,6 @@ export default function App() {
 //     // letterSpacing: 1.5,
 //     // position: "absolute",
 //     // bottom: 20,
-//     // fontFamily: "Raleway_800ExtraBold", ------------------------------
+//     // fontFamily: "Raleway_800ExtraBold",
 //   },
 // });
