@@ -97,7 +97,7 @@ const Main = () => {
           "self-center",
           "text-center",
           "text-5xl",
-          "text-black",
+          "text-[#362D23]",
           "tracking-widest",
           "font-black"
         )}
