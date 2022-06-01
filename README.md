@@ -2,6 +2,8 @@
 
 This project allows the user to exchange currency between two countries.
 
+Click for the published [web version](https://currency-exchanger-app.netlify.app/) 💻
+
 ## Motivation
 
 It was created because the authors wanted to strengthen their ReactJS knowledge by learning React Native and further their technical skills by learning Tailwind CSS.
@@ -20,14 +22,13 @@ And also to collaborate for the first time and have fun together!
 
 - React v17.0.2
 - React Native v0.68.2
+- TailwindCSS v3.0.24
 
 ## Future Goals
 
 Our next sprint will include these improvements:
 
 - [ ] a feature that allows the user to reverse the countries to exchange
-- [ ] default flag images will be displayed
-- [ ] the app will run on android simulator
 - [ ] the user will be able to see exchange currency of Cuba
 
 ## Known Bugs
