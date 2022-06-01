@@ -1,11 +1,13 @@
 // React
-import { SafeAreaView } from 'react-native';
-// import { View } from "react-native-web";
+// import { SafeAreaView } from 'react-native';
+import { SafeAreaView } from '../../lib/CustomComponents.js';
 // Components
 import CountryInputField from '../../Global/CountryInputField';
 import AmountInputField from '../../Global/AmountInputField';
 // util
-import tw from 'twrnc';
+// import tw from 'twrnc';
+// style
+import classes from '../../lib/CustomClasses.js';
 
 const ToContainer = ({
 	toCountry,
@@ -18,7 +20,7 @@ const ToContainer = ({
 	onChangetoCurrency,
 }) => {
 	return (
-		<SafeAreaView style={tw.style('justify-center', 'w-full', 'my-4')}>
+		<SafeAreaView className={classes.fromAndTo}>
 			<CountryInputField country={toCountry} setCountry={setToCountry} />
 			<AmountInputField
 				countryFlag={toCountryFlag}

@@ -1,58 +1,82 @@
 // React
 import React from 'react';
 import { StatusBar } from 'expo-status-bar';
-import { Text, View, ImageBackground } from 'react-native';
+// import { Text, View, ImageBackground } from 'react-native';
+import { Text, View, ImageBackground } from './lib/CustomComponents.js';
 // Components
 import Main from './Main/Main';
 // Utils
-import tw from 'twrnc';
+// import tw from 'twrnc';
 // import { TailwindProvider } from 'tailwind-rn';
 // import utilities from './tailwind.json';
+// style
+import classes, { custom } from './lib/CustomClasses.js';
+
+import {
+	Raleway_100Thin,
+	Raleway_100Thin_Italic,
+	Raleway_200ExtraLight,
+	Raleway_200ExtraLight_Italic,
+	Raleway_300Light,
+	Raleway_300Light_Italic,
+	Raleway_400Regular,
+	Raleway_400Regular_Italic,
+	Raleway_500Medium,
+	Raleway_500Medium_Italic,
+	Raleway_600SemiBold,
+	Raleway_600SemiBold_Italic,
+	Raleway_700Bold,
+	Raleway_700Bold_Italic,
+	Raleway_800ExtraBold,
+	Raleway_800ExtraBold_Italic,
+	Raleway_900Black,
+	Raleway_900Black_Italic,
+} from '@expo-google-fonts/raleway';
+import { useFonts } from 'expo-font';
+
+
+
 
 export default function App() {
 	const image = {
 		uri: 'https://images.unsplash.com/photo-1612540646801-4d5d183e6bc1?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80',
 	};
 
+	useFonts({
+		Raleway_100Thin,
+		Raleway_100Thin_Italic,
+		Raleway_200ExtraLight,
+		Raleway_200ExtraLight_Italic,
+		Raleway_300Light,
+		Raleway_300Light_Italic,
+		Raleway_400Regular,
+		Raleway_400Regular_Italic,
+		Raleway_500Medium,
+		Raleway_500Medium_Italic,
+		Raleway_600SemiBold,
+		Raleway_600SemiBold_Italic,
+		Raleway_700Bold,
+		Raleway_700Bold_Italic,
+		Raleway_800ExtraBold,
+		Raleway_800ExtraBold_Italic,
+		Raleway_900Black,
+		Raleway_900Black_Italic,
+	});
+	
 	return (
-		<View
-			style={tw.style('flex-1', 'items-center', 'justify-center', 'w-full')}
-		>
+		<View className={classes.app}>
 			<ImageBackground
 				source={image}
 				resizeMode='cover'
-				style={tw`flex-1 justify-center`}
+				className={classes.app__bg}
 			>
 				<StatusBar style='auto' />
-				<Text
-					style={tw.style(
-						'w-11/12',
-						'self-center',
-						'text-center',
-						'text-5xl',
-						'tracking-widest',
-						'text-[#fffaf0]',
-						'font-bold',
-						{ fontFamily: 'Raleway_900Black' }
-					)}
-				>
+				<Text className={classes.app__header}>
 					{' '}
 					Currency Exchange
 				</Text>
 				<Main />
-				<Text
-					style={tw.style(
-						'w-11/12',
-						'self-center',
-						'text-center',
-						'text-base',
-						'tracking-widest',
-						'text-[#fffaf0]',
-						'absolute',
-						'bottom-5',
-						'font-semibold',
-						{ fontFamily: 'Raleway_800ExtraBold' }
-					)}
+				<Text className={classes.app__footer}
 				>
 					All Rights Reserved By S&S © 2022
 				</Text>

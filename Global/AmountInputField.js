@@ -1,8 +1,11 @@
 // React
 import React from 'react';
-import { SafeAreaView, TextInput, Image, View } from 'react-native';
+// import { SafeAreaView, TextInput, Image, View } from 'react-native';
+import { SafeAreaView, TextInput, Image, View } from '../lib/CustomComponents.js';
 // Utils
-import tw from 'twrnc';
+// import tw from 'twrnc';
+// styles
+import classes from '../lib/CustomClasses.js';
 
 const AmountInputField = ({
 	onChangeCountryFlag,
@@ -15,58 +18,21 @@ const AmountInputField = ({
 	ieCurrency,
 }) => {
 	return (
-		<SafeAreaView
-			style={tw.style(
-				'w-4/5',
-				'my-1.3',
-				'flex-1',
-				'flex-row',
-				'self-center',
-				'shadow-[#151515]',
-				'shadow-2xl',
-				'shadow-neutral-900'
-			)}
-		>
-			<View
-				style={tw.style(
-					'flex-1',
-					'bg-[#ffffffa6]',
-					'rounded-lg',
-					'flex-row',
-					'items-center'
-				)}
-			>
+		<SafeAreaView className={classes.amountInputField}>
+			<View className={classes.amountInputField__container}>
 				<Image
 					source={countryFlag}
-					style={tw.style('w-1/5', 'py-4', 'px-4', 'items-center', {
-						resizeMode: 'contain',
-					})}
+					className={classes.amountInputField__flag}
 					editable={false}
 				/>
-				<TextInput
-					style={tw.style(
-						'w-3/5',
-						'py-4',
-						'text-center',
-						'text-[#252525]',
-						'text-xl',
-						'tracking-widest',
-						{ outlineStyle: 'none', fontFamily: 'Raleway_800ExtraBold' }
-					)}
+				<TextInput 
+					className={classes.amountInputField__amount}
 					onChangeText={onChangeAmount}
 					value={amount}
 					placeholder={ieAmount}
 				/>
-				<TextInput
-					style={tw.style(
-						'w-1/5',
-						'py-4',
-						'text-center',
-						'text-[#252525]',
-						'text-base',
-						'tracking-widest',
-						{ outlineStyle: 'none', fontFamily: 'Raleway_800ExtraBold' }
-					)}
+				<TextInput 
+					className={classes.amountInputField__currency}
 					onChangeText={onChangeCurrency}
 					value={currency}
 					placeholder={ieCurrency}

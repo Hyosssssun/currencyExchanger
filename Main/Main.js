@@ -1,6 +1,7 @@
 // React
 import React, { useState, useEffect } from 'react';
-import { View } from 'react-native';
+// import { View } from 'react-native';
+import { View } from '../lib/CustomComponents.js';
 // Components
 import FromContainer from './From/FromContainer.js';
 import ToContainer from './To/ToContainer.js';
@@ -9,6 +10,8 @@ import FlatButton from '../Global/Button';
 import tw from 'twrnc';
 import { API_URL, API_KEY } from '@env';
 import CountryAndCurrency from '@workmate/country-and-currency';
+// style 
+import classes from '../lib/CustomClasses.js';
 
 const Main = () => {
 	const [fromCountry, setFromCountry] = useState('');
@@ -70,15 +73,7 @@ const Main = () => {
 	};
 
 	return (
-		<View
-			style={tw.style(
-				'items-center',
-				'self-center',
-				'justify-center',
-				'my-16',
-				'w-full'
-			)}
-		>
+		<View className={classes.main}>
 			<FromContainer
 				fromCountry={fromCountry}
 				setFromCountry={setFromCountry}
