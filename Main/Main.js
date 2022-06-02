@@ -24,6 +24,7 @@ const Main = () => {
   );
   const [toAmount, onChangetoAmount] = useState("");
   const [toCurrency, onChangetoCurrency] = useState("");
+  const [switched, setSwitched] = useState(false)
 
   const uppercaseWords = (str) =>
     str.replace(/^(.)|\s+(.)/g, (c) => c.toUpperCase());
@@ -45,7 +46,10 @@ const Main = () => {
   };
 
   useEffect(() => {
-    setCurrencies(fromCountry, toCountry);
+    switched ? 
+      setCurrencies(toCountry, fromCountry) 
+      : 
+      setCurrencies(fromCountry, toCountry);
   });
 
   // if you want just rates, use this URL:
@@ -80,7 +84,7 @@ const Main = () => {
       )}
     >
       <FromContainer
-        fromCountry={fromCountry}
+        fromCountry={switched ? toCountry : fromCountry}
         setFromCountry={setFromCountry}
         fromCountryFlag={fromCountryFlag}
         onChangefromCountryFlag={onChangefromCountryFlag}
@@ -101,12 +105,13 @@ const Main = () => {
           "tracking-widest",
           "font-black"
         )}
+        onPress={()=>setSwitched(!switched)}
       >
         ⬇︎⬆︎
       </Text>
 
       <ToContainer
-        toCountry={toCountry}
+        toCountry={switched ? fromCountry : toCountry}
         setToCountry={setToCountry}
         toCountryFlag={toCountryFlag}
         onChangetoCountryFlag={onChangetoCountryFlag}

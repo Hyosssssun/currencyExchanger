@@ -25,7 +25,7 @@ const CountryInputField = ({ country, setCountry }) => {
 					{ outlineStyle: 'none', fontFamily: 'Raleway_800ExtraBold' }
 				)}
 				onChangeText={(newText) => setCountry(newText)}
-				defaultValue={country}
+				value={country}
 				autoCapitalize='words'
 				placeholder='Enter the country'
 			/>
