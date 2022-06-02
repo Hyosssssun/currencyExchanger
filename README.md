@@ -1,8 +1,12 @@
+<div align="right">
+
+[![Netlify Status](https://api.netlify.com/api/v1/badges/e5d92ddd-8dfe-4aee-b69f-f7052b6d7a2e/deploy-status)](https://app.netlify.com/sites/currency-exchanger-app/deploys)
+
+</div>
+
 # 💰 Currency Exchange App
 
 This project allows the user to exchange currency between two countries.
-
-[![Netlify Status](https://api.netlify.com/api/v1/badges/e5d92ddd-8dfe-4aee-b69f-f7052b6d7a2e/deploy-status)](https://app.netlify.com/sites/currency-exchanger-app/deploys)
 
 Click for the published [web version](https://currency-exchanger-app.netlify.app/) 💻
 
