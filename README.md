@@ -29,9 +29,7 @@ And also to collaborate for the first time and have fun together!
 Our next sprint will include these improvements:
 
 - [ ] the user will be able to see exchange currency of Cuba
-- [x] a feature that allows the user to reverse the countries to exchange
-
-  _Completed on 2nd June_
+- [x] a feature that allows the user to reverse the countries to exchange - _Completed on 2nd June_
 
 ## Known Bugs
 
