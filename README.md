@@ -13,7 +13,7 @@ And also to collaborate for the first time and have fun together!
 ## Demo
 
 <div align="center">
-<img src="https://user-images.githubusercontent.com/93612381/169525343-776fad4c-6c34-4b78-94c7-5b9ade4d424c.gif" alt="App demo on iPhone 12 PRO" />
+<img src="https://user-images.githubusercontent.com/93612381/171616859-741bcc29-5094-4718-b84f-d46796464b1b.gif" alt="App demo on iPhone 12 PRO" />
 
 <p style="font-weight: bold">iPhone 12 PRO</p>
 </div>
@@ -28,8 +28,10 @@ And also to collaborate for the first time and have fun together!
 
 Our next sprint will include these improvements:
 
-- [ ] a feature that allows the user to reverse the countries to exchange
 - [ ] the user will be able to see exchange currency of Cuba
+- [x] a feature that allows the user to reverse the countries to exchange
+
+  _Completed on 2nd June_
 
 ## Known Bugs
 
